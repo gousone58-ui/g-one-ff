@@ -1,4 +1,4 @@
-here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -14,100 +14,161 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#000,#0b1d4d,#000);
+background:linear-gradient(-45deg,#000,#001d4a,#003d99,#000);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
 color:white;
-text-align:center;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+animation:hide 2.5s forwards;
+animation-delay:2.5s;
+}
+
+#loader h1{
+font-size:45px;
+color:#00c3ff;
+text-shadow:0 0 20px #00c3ff;
+}
+
+.bar{
+width:220px;
+height:8px;
+background:#222;
+margin-top:20px;
+border-radius:50px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:#00c3ff;
+animation:load 2.5s forwards;
+}
+
+@keyframes load{
+to{width:100%;}
+}
+
+@keyframes hide{
+to{
+opacity:0;
+visibility:hidden;
+}
 }
 
 header{
-padding:40px 20px;
-}
-
-h1{
-font-size:45px;
-color:#00bfff;
-text-shadow:0 0 20px #00bfff;
-}
-
-p{
-margin-top:10px;
-font-size:20px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
 }
 
 .logo{
-width:140px;
-height:140px;
-border-radius:50%;
-border:4px solid #00bfff;
-margin:25px auto;
+font-size:60px;
+font-weight:bold;
+color:#00c3ff;
+text-shadow:0 0 25px #00c3ff;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 15px #00c3ff;}
+to{text-shadow:0 0 40px #00c3ff;}
+}
+
+.slogan{
+margin-top:20px;
+font-size:22px;
+opacity:.9;
 }
 
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 35px;
-background:#00bfff;
-color:white;
-text-decoration:none;
-font-size:20px;
-border-radius:40px;
+margin-top:35px;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:#00c3ff;
+color:#fff;
+font-size:18px;
+cursor:pointer;
 transition:.3s;
+text-decoration:none;
 }
 
 .btn:hover{
-background:#008cff;
 transform:scale(1.08);
+box-shadow:0 0 25px #00c3ff;
 }
 
-.card{
-margin:25px;
-padding:20px;
-background:rgba(255,255,255,.08);
-border-radius:20px;
+.social{
+margin-top:20px;
 }
 
-footer{
-margin-top:50px;
-padding:20px;
-background:#000;
+.social a{
+color:#00c3ff;
+text-decoration:none;
+font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
+<div id="loader">
+<h1>⚡ G_ONE FF ⚡</h1>
+<div class="bar">
+<div class="fill"></div>
+</div>
+<p style="margin-top:15px;">Chargement...</p>
+</div>
+
 <header>
 
-<img src="https://via.placeholder.com/140" class="logo">
+<div class="logo">
+G_ONE FF
+</div>
 
-<h1>G_ONE FF</h1>
+<p class="slogan">
+🎮 Le Headshot commence ici.
+</p>
 
-<p>🔥 Le Roi du Headshot Free Fire 🔥</p>
-
-<a class="btn" href="https://www.tiktok.com/@g_one243" target="_blank">
-Suivre sur TikTok
+<a href="#suite" class="btn">
+🎮 Entrer
 </a>
+
+<div class="social">
+<a href="https://www.tiktok.com/@g_one243" target="_blank">
+📱 TikTok : @g_one243
+</a>
+</div>
 
 </header>
 
-<div class="card">
-<h2>🎯 Astuces</h2>
-<p>Les meilleures techniques Headshot et DPI.</p>
-</div>
-
-<div class="card">
-<h2>📹 Dernières vidéos</h2>
-<p>Retrouve toutes mes vidéos TikTok.</p>
-</div>
-
-<div class="card">
-<h2>❤️ Communauté</h2>
-<p>Merci à tous ceux qui soutiennent G_ONE FF.</p>
-</div>
-
-<footer>
-© 2026 G_ONE FF - Tous droits réservés.
-</footer>
+<section id="suite" style="padding:50px;text-align:center;">
+<h2>Bienvenue 👋</h2>
+<p>La suite du site arrive dans la Partie 2...</p>
+</section>
 
 </body>
 </html>
